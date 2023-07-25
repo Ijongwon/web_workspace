@@ -1,0 +1,36 @@
+HTML
+여백 아래 2가지도 방향을 지정할 수 있습니다.
+padding : 안쪽(내부 여백)
+margin : 테두리 바깥쪽 여백 
+margin은 특별히 auto 를 설정해서 좌/우 여백을 중앙으로 배치되게 설정합니다.
+
+width는 너비, height는 높이이고 절대값으로 px 등을 줄수 있고, 상대값으로 %를 줄수 있음.
+
+xxx-top
+xxx-bottom
+xxx-left
+xxx-right 4개의 방향을 직접 지정할 수도 있고 모두 동일하다면 방향을 생략하고 사용가능.
+
+padding : 40px 30px 20px 10px; 시계방향(위-오른쪽-아래-왼쪽)으로 설정
+padding ++px --px : 테두리 안쪽 여백(++: 위아래, -- 양옆)
+paddign : 20px; 모든 방향 동일
+
+border --px : 테두리만들기(--:선의 두께)
+border-width: 1px;border-style:solid;border-color:black; 를 한번에 줄여서 쓰면
+border:1px solid black;
+
+테두리는 위/아래/좌/우 4개 방향에 대해 width,style,color 각각 설정 가능
+border-top-width
+border-bottom-width
+border-left-width
+border-right-width
+
+width,height 는 block 요소에만 설정합니다.
+-----------------------------------
+일반적인 블록요소 div, 인라인요소 span
+인라인 요소에 너비와 높이를 주고싶으면 display 속성을 inline-block;
+
+인라인요소 안에 인라인 요소 중첩가능?
+인라인요소 안에 블록 요소 중첩가능? -> xxxxxxxxx
+블록요소 안에 인라인 요소 중첩가능?
+블록요소 안에 블록 요소 중첩가능?

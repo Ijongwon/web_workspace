@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS 기본 프로퍼티 정리</title>
+<style type="text/css">
+body {
+	background-color: gainsboro;
+}
+
+h2 {
+	text-align: center;
+}
+
+table {
+	border-collapse: collapse;
+	margin: auto;
+	background-color: ivory;
+}
+
+td:nth-child(2) {
+	font-weight: bold;
+}
+
+td:nth-child(4) {
+	font-weight: bold;
+}
+
+th, td {
+	border: 1px solid gray;
+	padding: 20px 10px;
+	text-align: center;
+}
+
+th {
+	background-color: gold;
+}
+
+ul {
+	text-align: left;
+}
+</style>
+</head>
+<body>
+	<h2>CSS 기본 프로퍼티 정리</h2>
+	<table>
+		<tr>
+			<th style="width: 100px;">번호</th>
+			<th style="width: 200px;">속성</th>
+			<th style="width: 500px;">설명</th>
+			<th style="width: 400px;">예시</th>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>colors</td>
+			<td>color 속성은 색상,정확히는 <em><ins>글자의 색상</ins></em> 을 의미합니다.
+				<ul>
+					<li>red,blue 등 이미 정의된 색
+					<li>#000,#FFFFFF 등의 16진수 색상 코드
+					<li>rgb(255,255,255) 등의 rgb 색상
+					<li>rgba(200,100,150,0.5)등의 알파(투명도)가 적용된 rgba 색상
+				</ul>
+			</td>
+			<td>color: red;<br> color: #0A0;<br> color:
+				rgb(0,0,150);
+			</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>width,height</td>
+			<td>각각 <em><ins>가로 길이, 세로 길이</ins></em> 를 의미한다.<br> 이 속성들은
+				block 요소에만 설정된다.<br> 상대값(%)를 줄수도 있다.
+			</td>
+			<td>width: 100px;<br>height: 60px;
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>margin,padding</td>
+			<td>각각 <em><ins>바깥쪽여백, 안쪽 여백</ins></em> 을 의미한다.<br>
+				width,height 속성과 마찬가지로 숫자 뒤에 단위를 표시하여 적는다.<br> border를 경계로 나뉜다.<br>
+				방향은 위부터 시계방향 순이다.
+			</td>
+			<td>margin(padding): 20px<br> margin(padding): 30px 10px<br>
+				margin(padding): 30px 10px 20px 50px
+			</td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td>font</td>
+			<td><em><ins>글자의 폰트</ins></em> 를 정의하는 속성<br> 세부적인 글꼴 관련 속성은
+				아래와 같다.
+				<ul>
+					<li>font-style : 이탤릭체 등의 글꼴의 스타일 지정</li>
+					<li>font-weight : 글자 두께</li>
+					<li>font-variant : 글꼴 변형(소문자를 대문자로 바꾸는 등의)</li>
+					<li>font-size : 글자 크기</li>
+					<li>font-height : 줄 간격</li>
+					<li>font-family : 글꼴(굴림,돋움,...)</li>
+				</ul></td>
+			<td>font-size : 20px;<br> font-family :
+				나눔고딕,NanumGothic,돋움,Dotum;<br> font-weight : bold<br>
+			</td>
+		</tr>
+		<tr>
+			<td>5</td>
+			<td>text-align</td>
+			<td><em><ins>텍스트의 정렬 방향</ins></em> 을 의미
+				<ul>
+					<li>left : 왼쪽 정렬</li>
+					<li>right : 오른쪽 정렬</li>
+					<li>center : 중앙 정렬</li>
+					<li>justify : 양쪽 정렬(자동 줄 바꿈시 오른쪽 경계선 부분 정리)</li>
+				</ul></td>
+			<td>text-align : right;<br> text-align: justify;
+			</td>
+		</tr>
+		<tr>
+			<td>6</td>
+			<td>background</td>
+			<td><em><ins>태그의 배경</ins></em> 을 지정하는 속성
+				<ul>
+					<li>background-color : 배경 색</li>
+					<li>background-image : 배경 이미지</li>
+					<li>background-repeat : 배경 이미지 반복여부</li>
+					<li>background-position : 배경 이미지 위치</li>
+				</ul></td>
+			<td>background-color : green;<br> background: yellow
+				url('/images/attach/google.png') no-repeat center center;
+		</tr>
+		<tr>
+			<td>7</td>
+			<td>border</td>
+			<td><em><ins>태그의 테두리를 설정</ins></em> 하는 속성<br>
+				width-style-color의 순서로 사용한다.<br> 테두리의 특정 방향만 따로 설정할 수도 있다.
+				<ul>
+					<li>border-width: 테두리의 두께, px 단위 사용</li>
+					<li>border-style: 테두리의 스타일, 실선,점선,이중선...</li>
+					<li>border-width: 테두리의 색상, color 속성의 포맷 사용</li>
+				</ul></td>
+			<td>border: 4px dotted green;<br> border-bottom: 5px solid
+				blue;<br>
+		</tr>
+		<tr>
+			<td>8</td>
+			<td>display</td>
+			<td><em><ins>요소를 어떻게 보여줄지</ins> 결정 한다.</em>
+				<ul>
+					<li>none: 보이지 않음, 영역차지 X</li>
+					<li>block: 블록 박스(div,p,h,li...) 가로영역을 모두 채우며, 줄바꿈이 된 것 처럼 보임</li>
+					<li>inline: 인라인 박스(span,b,i,a) 줄 바꿈 X, width와 height 지정 X</li>
+					<li>inline-block : block과 inline 의 중간형태, 줄바꿈이 되진 않지만 크기 지정 가능</li>
+				</ul></td>
+			<td>display : none;<br> display : inline-block;
+	</table>
+</body>
+</html>
