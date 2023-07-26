@@ -34,6 +34,12 @@ nav ul {
 	min-height: 7vh;
 }
 
+nav li:last-child{
+	float:right;
+	margin-right: 20px;
+}
+
+
 nav li {
 	float: left;
 }
