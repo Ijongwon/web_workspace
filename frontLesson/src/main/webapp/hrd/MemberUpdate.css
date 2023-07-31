@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+section th, td{
+	border: 1px solid black;
+	padding: 10px 10px;
+	text-align: center;
+}
+
+section table {
+	border-collapse: collapse;
+	margin: auto;
+	}
+	
+section h3 {
+	text-align: center;
+}
+
+section label {
+	font-weight: bold;
+	
+}
+
+section td:nth-child(2) {
+	width: 500px;
+	text-align: left;
+	}
+	
+	
+#custPhone {
+	width: 250px;
+}
+
+#custAdd {
+	width: 300px;
+}
