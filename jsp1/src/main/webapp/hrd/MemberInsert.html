@@ -2,18 +2,20 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Layout(외부평가)</title>
+<title>회원등록</title>
 <link rel="stylesheet" href="Layout.css">
 <link rel="stylesheet" href="MemberInsert.css">
 </head>
 <body>
+
+
 	<header>
 	<h2>홈쇼핑 회원관리 ver1.0</h2>
 	</header>
 	<nav>
 		<ul>
 			<li><a href="MemberInsert.html">회원등록</a></li>
-			<li><a href="MemberList.html">회원목록조회/수정</a></li>
+			<li><a href="MemberList.jsp">회원목록조회/수정</a></li>
 			<li><a href="MemberSales.html">회원매출조회</a></li>
 			<li><a href="index.html">홈으로</a></li>
 		</ul>
@@ -47,7 +49,7 @@
 			
 			<tr>
 				<td><label for="custDate">가입일자</label></td>
-				<td><input type="date" id="custDate" name="start" >
+				<td><input type="date" id="custDate" name="start" disabled="disabled">
 				<span>개인정보보호 종료일자</span>
 				<input type="date" id="custEnd" name ="end" disabled="disabled"></td>
 			</tr>
@@ -65,7 +67,7 @@
 			<tr>
 				<td colspan="2">
 					<button type="button" id = "btn" >등록</button>
-					<button type="button" onclick="location.href='MemberList.html'">조회</button>
+					<button type="button" onclick="location.href='MemberList.jsp'">조회</button>
 		
 					<!-- onclick은 자바 스크립트 코드를 작성 -->
 				</td>
@@ -77,18 +79,16 @@
 	<h4>HRDKOREA Copyright@2016 All rights reserved. Human Resources Development Service of Korea.</h4>
 	</footer>
 <script type="text/javascript">
+
 	const addDate = document.forms[0].start
 	const endDate = document.forms[0].end
 	
 	let today = new Date()
 	addDate.value = dateFormat(today,'-')
-	addDate.min = dateFormat(today,'-')
 
 	let temp = new Date(addDate.value)
 	temp.setYear(temp.getFullYear()+1)		
 	endDate.value = dateFormat(temp,'-')
-	
-	
 	
 	function dateFormat(vdate,symbol){
 		const year = vdate.getFullYear()
@@ -99,11 +99,7 @@
 	}
 	
 	
-
-
-
 </script>
-
 
 </body>
 </html>
