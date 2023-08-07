@@ -34,11 +34,16 @@
 	</nav>
 	<section>
 		<h3>홈쇼핑 회원 수정</h3>
-		<form action="">
+		<!-- action은 input 데이터를 전달받고 처리할 url 입니다. 
+			 MemberSave.jsp를 만드세요. 그리고 전달받은 파라미터로 update 실행하도록 하세요.
+			 		ㄴ 이 파일에는 자바코드 만 작성하고 태그는 필요없습니다.
+			 		MemberUpdate.jsp에서 보내는 파라미터 이름은 input 태그의 name 속성-->
+		<form action="MemberSave.jsp" method ="post">
 		<table>
 			<tr>
 				<td><label for="custNo">회원번호</label></td>
 				<td><input type="number" id="lblNo"  value="<%= custno %>" name="customNo" disabled="disabled">
+				<!-- disabled로 설정된 것은 파라미터 전달이 안됩니다. readonly로 바꾸세요. -->
 				</td>
 			</tr>
 
@@ -72,7 +77,7 @@
 			
 			<tr>
 				<td colspan="2">
-					<button type="button" onclick="alert('회원번호 수정이 완료되었습니다!')">수정</button>
+					<button>수정</button>
 					<button type="button" onclick="location.href='MemberList.jsp'">조회</button>
 					
 		
@@ -85,10 +90,6 @@
 	<footer>
 	<h4>HRDKOREA Copyright@2016 All rights reserved. Human Resources Development Service of Korea.</h4>
 	</footer>
-
-
-
-
 
 </body>
 </html>
