@@ -81,16 +81,15 @@ public class MemberDao {
 	public int update(Member member) throws SQLException{
 		
 		Connection conn = OracleUtility.getConnection();
-		String sql = "update member_tbl_02 set custno =?, custname =?, phone =? , address=?, joindate =?, grade =?, city=? where custno = ?";
+		String sql = "update member_tbl_02 set custno =?, custname =?, phone =? , address=?, grade =?, city=? where custno = ?";
 		PreparedStatement ps = conn.prepareStatement(sql);
 		ps.setInt(1, member.getCustno());
 		ps.setString(2, member.getCustname());
 		ps.setString(3, member.getPhone());
 		ps.setString(4, member.getAddress());
-		ps.setDate(5, member.getJoindate());
-		ps.setString(6, member.getGrade());
-		ps.setString(7, member.getCity());
-		ps.setInt(8, member.getCustno());
+		ps.setString(5, member.getGrade());
+		ps.setString(6, member.getCity());
+		ps.setInt(7, member.getCustno());
 		int results = ps.executeUpdate();
 		
 		ps.close();
