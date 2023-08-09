@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,14 +9,12 @@
 <link rel="stylesheet" href="MemberInsert.css">
 </head>
 <body>
-
-
 	<header>
 	<h2>홈쇼핑 회원관리 ver1.0</h2>
 	</header>
 	<nav>
 		<ul>
-			<li><a href="MemberInsert.html">회원등록</a></li>
+			<li><a href="MemberRegister.jsp">회원등록</a></li>
 			<li><a href="MemberList.jsp">회원목록조회/수정</a></li>
 			<li><a href="MemberSales.html">회원매출조회</a></li>
 			<li><a href="index.html">홈으로</a></li>
@@ -22,12 +22,11 @@
 	</nav>
 	<section>
 		<h3>홈쇼핑 회원 등록</h3>
-		<form action="">
+		<form action="RegisterSave2.jsp" method="post">
 		<table>
 			<tr>
 				<td><label for="custNo">회원번호(자동발생)</label></td>
-				<td><input type="text" id="custNo" value="100006" name="number" disabled="disabled">
-				</td>
+				<td><input type="number" id="lblNo" value="" name="custno"></td>
 			</tr>
 
 			<tr>
@@ -66,7 +65,7 @@
 			
 			<tr>
 				<td colspan="2">
-					<button type="button" id = "btn" >등록</button>
+					<button onclick="alert('등록되었습니다.')" >등록</button>
 					<button type="button" onclick="location.href='MemberList.jsp'">조회</button>
 		
 					<!-- onclick은 자바 스크립트 코드를 작성 -->

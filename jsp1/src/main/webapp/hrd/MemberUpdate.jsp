@@ -26,7 +26,7 @@
 	</header>
 	<nav>
 		<ul>
-			<li><a href="MemberInsert.html">회원등록</a></li>
+			<li><a href="MemberRegister.jsp">회원등록</a></li>
 			<li><a href="MemberList.jsp">회원목록조회/수정</a></li>
 			<li><a href="MemberSales.html">회원매출조회</a></li>
 			<li><a href="index.html">홈으로</a></li>
@@ -38,11 +38,11 @@
 			 MemberSave.jsp를 만드세요. 그리고 전달받은 파라미터로 update 실행하도록 하세요.
 			 		ㄴ 이 파일에는 자바코드 만 작성하고 태그는 필요없습니다.
 			 		MemberUpdate.jsp에서 보내는 파라미터 이름은 input 태그의 name 속성-->
-		<form action="MemberSave.jsp" method ="post">
+		<form action="UpdateSave.jsp" method ="post">
 		<table>
 			<tr>
 				<td><label for="custNo">회원번호</label></td>
-				<td><input type="number" id="lblNo"  value="<%= custno %>" name="customNo" disabled="disabled">
+				<td><input type="number" id="lblNo"  value="<%= custno %>" name="custNo">
 				<!-- disabled로 설정된 것은 파라미터 전달이 안됩니다. readonly로 바꾸세요. -->
 				</td>
 			</tr>
