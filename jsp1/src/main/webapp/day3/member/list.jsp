@@ -17,7 +17,9 @@
 	//list 를 저장하는 애트리뷰트 메소드 실행
 	request.setAttribute("list", list);
 	//요청을 listView.jsp(화면출력)로 전달하기
+	//->list를 list.jsp와 listView.jsp가 공유하게 됩니다.
 	pageContext.forward("listView.jsp");
+	//pageContext.forward("16jstlSample.jsp");
 %>
 </body>
 </html>
