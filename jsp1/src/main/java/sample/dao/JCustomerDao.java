@@ -28,12 +28,39 @@ public class JCustomerDao {
 // select 쿼리 실행
 			JCustomer temp = null;
 			if(rs.next()) {
-				temp = new JCustomer(rs.getString(1),rs.getString(2),rs.getString(3),
-						rs.getInt(4),rs.getDate(5));
+				temp = new JCustomer(rs.getString(1),
+						rs.getString(2),
+						rs.getString(3),
+						rs.getDate(4),
+						rs.getInt(5),
+						null);
 			}
 			ps.close();
 			conn.close();
 
 			return temp;
 		}
+		
+		public JCustomer login(String id,String password) throws SQLException {
+		      Connection conn = OracleUtility.getConnection();
+		      // id는 custom_id 컬럼값, password 컬럼값(평문으로 저장됨)
+		      String sql = "select custom_id,name from j_custom where custom_id =? and password=?";
+		      PreparedStatement ps = conn.prepareStatement(sql);
+		      ps.setString(1, id);
+		      ps.setString(2,password);
+		      JCustomer result=null;
+		      ResultSet rs = ps.executeQuery();
+		      if(rs.next()) {
+		         result = JCustomer.builder()
+			               .custom_id(rs.getString(1))
+			               .name(rs.getString(2))
+			               .build();
+		      }
+		      
+		      return result;      //result 가 null 이 아니면 로그인 성공
+		   }
+		
+		
+		
+		
 }
