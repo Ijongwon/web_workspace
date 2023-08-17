@@ -15,35 +15,35 @@ public class CommunityCommentsDao {
 
 	
 	public int insert(CommunityComments vo) {
-		SqlSession factory = SqlSessionBean.getSession();
-		int result = factory.insert("communityComments.insert",vo);
-		factory.commit();
-		factory.close();
+		SqlSession mapper = SqlSessionBean.getSession();
+		int result = mapper.insert("communityComments.insert",vo);
+		mapper.commit();
+		mapper.close();
 		return result;
 	}
 	
 	public int delete(int idx) {
-		SqlSession factory = SqlSessionBean.getSession();
-		int result = factory.delete("communityComments.delete",idx);
-		factory.commit();
-		factory.close();
+		SqlSession mapper = SqlSessionBean.getSession();
+		int result = mapper.delete("communityComments.delete",idx);
+		mapper.commit();
+		mapper.close();
 		return result;
 	}
 	
 	//idx 최대값 구하기
 	public int maxOf() {
-		SqlSession factory = SqlSessionBean.getSession();
-		int result = factory.selectOne("communityComments.maxOf");
-		factory.close();
+		SqlSession mapper = SqlSessionBean.getSession();
+		int result = mapper.selectOne("communityComments.maxOf");
+		mapper.close();
 		return result;
 	}
 
 	//메인글의 댓글 갯수 업데이트	
 	public int setCommentCount(long idx) {
-		SqlSession factory = SqlSessionBean.getSession();
-		int result = factory.update("community.setCommentCount", idx);
-		factory.commit();
-		factory.close();
+		SqlSession mapper = SqlSessionBean.getSession();
+		int result = mapper.update("community.setCommentCount", idx);
+		mapper.commit();
+		mapper.close();
 		return result;
 	}
 }

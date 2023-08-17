@@ -11,68 +11,70 @@ import mybatis.SqlSessionBean;
 public class CommunityDao {
 
 	private static CommunityDao dao = new CommunityDao();
-	private CommunityDao()	{}
+
+	private CommunityDao() {
+	}
+
 	public static CommunityDao getInstance() {
 		return dao;
 	}
-	
-	
+
 	public List<Community> list() {
-		SqlSession factory = SqlSessionBean.getSession();
-		List<Community> list = factory.selectList("community.list");
-		factory.close();
+		SqlSession mapper = SqlSessionBean.getSession();
+		List<Community> list = mapper.selectList("community.list");
+		mapper.close();
 		return list;
-		
+
 	}
-	
-	public List<Community> pagelist(Map<String,Integer> map) {
-		SqlSession factory = SqlSessionBean.getSession();
-		List<Community> list = factory.selectList("community.pagelist",map);
-		factory.close();
+
+	public List<Community> pagelist(Map<String, Integer> map) {
+		SqlSession mapper = SqlSessionBean.getSession();
+		List<Community> list = mapper.selectList("community.pagelist", map);
+		mapper.close();
 		return list;
-		
+
 	}
-	
+
 	public int count() {
-		SqlSession factory = SqlSessionBean.getSession();
-		int result = factory.selectOne("community.count");
-		factory.close();
+		SqlSession mapper = SqlSessionBean.getSession();
+		int result = mapper.selectOne("community.count");
+		mapper.close();
 		return result;
-		
+
 	}
-	
-	public List<Community> selectByIdx(long idx){
-		SqlSession factory = SqlSessionBean.getSession();
-		List<Community> list = factory.selectOne("community.selectByIdx",idx);
-		factory.close();
+
+	public List<Community> selectByIdx(long idx) {
+		SqlSession mapper = SqlSessionBean.getSession();
+		List<Community> list = mapper.selectOne("community.selectByIdx", idx);
+		mapper.close();
 		return list;
 	}
-	
+
 	public int setReadCount(long idx) {
-		SqlSession factory = SqlSessionBean.getSession();
-		int result = factory.update("community.setReadCount", idx);
-		factory.commit();
-		factory.close();
+		SqlSession mapper = SqlSessionBean.getSession();
+		int result = mapper.update("community.setReadCount", idx);
+		mapper.commit();
+		mapper.close();
 		return result;
-		
+
 	}
-	
+
 	public int update(Community vo) {
-		SqlSession factory = SqlSessionBean.getSession();
-		int result = factory.update("community.update",vo);
-		factory.commit();
-		factory.close();
+		SqlSession mapper = SqlSessionBean.getSession();
+		int result = mapper.update("community.update", vo);
+		mapper.commit();
+		mapper.close();
 		return result;
 	}
-	
+
 	public int delete(long idx) {
-		SqlSession factory = SqlSessionBean.getSession();
-		int result = factory.delete("community.delete",idx);
-		factory.commit();
-		factory.close();
+		SqlSession mapper = SqlSessionBean.getSession();
+		int result = mapper.delete("community.delete", idx);
+		mapper.commit();
+		mapper.close();
 		return result;
 	}
-	
-	//factory.close();
-	
+
+	// factory.close();
+
 }
