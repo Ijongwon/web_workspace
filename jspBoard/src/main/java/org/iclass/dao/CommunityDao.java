@@ -43,11 +43,11 @@ public class CommunityDao {
 
 	}
 
-	public List<Community> selectByIdx(long idx) {
+	public Community selectByIdx(long idx) {
 		SqlSession mapper = SqlSessionBean.getSession();
-		List<Community> list = mapper.selectOne("community.selectByIdx", idx);
+		Community vo = mapper.selectOne("community.selectByIdx", idx);
 		mapper.close();
-		return list;
+		return vo;
 	}
 
 	public int setReadCount(long idx) {
@@ -73,6 +73,17 @@ public class CommunityDao {
 		mapper.commit();
 		mapper.close();
 		return result;
+	}
+	
+	public long insert(Community vo) {
+		SqlSession mapper = SqlSessionBean.getSession();
+		mapper.insert("community.insert",vo);
+		mapper.commit();
+		mapper.close();
+		
+		//매퍼 xml에서 selectKey 로 시퀀스 값을 vo객체 idx 프로퍼티에 저장시켰습니다.
+		return vo.getIdx();
+		
 	}
 
 	// factory.close();
