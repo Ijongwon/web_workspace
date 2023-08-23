@@ -34,6 +34,7 @@ INSERT INTO community (idx,writer,title,content)
 VALUES (community_idx_seq.nextval, '이사나','정회원 공77지','정회원 안내입니다.');
 INSERT INTO community (idx,writer,title,content)
 VALUES (community_idx_seq.nextval, '이사나','정회원 공88지','정회원 안내입니다.');
+
 SELECT * FROM COMMUNITY c ;
 
 

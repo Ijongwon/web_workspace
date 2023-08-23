@@ -1,5 +1,7 @@
 package org.iclass.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.iclass.dto.CommunityComments;
 
@@ -41,9 +43,18 @@ public class CommunityCommentsDao {
 	//메인글의 댓글 갯수 업데이트	
 	public int setCommentCount(long idx) {
 		SqlSession mapper = SqlSessionBean.getSession();
-		int result = mapper.update("community.setCommentCount", idx);
+		int result = mapper.update("setCommentCount", idx);
 		mapper.commit();
 		mapper.close();
 		return result;
 	}
+	
+	public List<CommunityComments> commentsList(long idx){
+		SqlSession mapper = SqlSessionBean.getSession();
+		List<CommunityComments> list = mapper.selectList("commentsList",idx);
+		mapper.close();
+		return list;
+		
+	}
+	
 }

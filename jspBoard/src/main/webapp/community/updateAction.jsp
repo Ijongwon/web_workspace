@@ -4,7 +4,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
-	request.setCharacterEncoding("UTF-8");
+	//request.setCharacterEncoding("UTF-8"); filter가 실행함
 	long idx = Long.parseLong(request.getParameter("idx"));
 	String title = request.getParameter("title");
 	String content = request.getParameter("content");

@@ -20,7 +20,30 @@
  	<select id="maxOf" resultType="int">
  		SELECT max(idx) FROM communityComments 
  	</select>
-
+	
+	<select id="commentsList" parameterType="long"
+		resultType="org.iclass.dto.CommunityComments">
+		
+		select *
+		from CommunityComments
+		where  mref=#{idx} 
+		</select>
+		
+	<update id="setCommentCount" parameterType="long">
+	<!-- 메인글 idx의 댓글이 몇개인지 communityComments 테이블에서 count(*) 로 구하고
+		 메인글 테이블 community update 합니다. -->
+		Update community
+		set commentcount =(
+			select count(*)
+		from CommunityComments
+		where  mref=#{idx} 
+		)
+		where idx= #{idx}
+		
+		
+	
+	</update>	
+	
  </mapper>
 
 
