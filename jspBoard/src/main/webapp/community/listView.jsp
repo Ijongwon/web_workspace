@@ -31,7 +31,7 @@
 	<li>
 		<ul  class="row">
 			<li>
-				<c:out value="${vo.idx }"/>
+				<c:out value="${vo.r }"/>
 			</li>
 			<li><a href="read.jsp?idx=${vo.idx }&page=${paging.currentPage}" class="title">  
 												<!-- 현재페이지 번호 전달 시작 -순서1) -->

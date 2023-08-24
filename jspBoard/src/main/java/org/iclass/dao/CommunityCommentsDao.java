@@ -24,7 +24,7 @@ public class CommunityCommentsDao {
 		return result;
 	}
 	
-	public int delete(int idx) {
+	public int delete(long idx) {
 		SqlSession mapper = SqlSessionBean.getSession();
 		int result = mapper.delete("communityComments.delete",idx);
 		mapper.commit();
